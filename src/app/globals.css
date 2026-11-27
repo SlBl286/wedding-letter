@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --ivory: #faf9f5;
+  --ivory-soft: #f2f1eb;
+  --forest: #1b3424;
+  --forest-deep: #132519;
+  --forest-muted: #2d4c37;
+  --sage: #7c9668;
+  --espresso: #3d2b24;
+  --charcoal: #151815;
+  --stone: #696d66;
+  --hairline: rgba(27, 52, 36, 0.14);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--ivory);
+    color: var(--charcoal);
+  }
+
+  body {
+    background-color: var(--ivory);
+    color: var(--charcoal);
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--forest);
+    color: var(--ivory);
+  }
+}
+
+.font-serif-display {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(27, 52, 36, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(27, 52, 36, 0.45);
+}

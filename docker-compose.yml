@@ -1,0 +1,22 @@
+services:
+  wedding-letter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wedding-letter
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-kimanh-tiendat-2026}
+      - ADMIN_SECRET=${ADMIN_SECRET:-kimanh-tiendat-secret}
+    volumes:
+      - wedding_data:/app/data
+    networks:
+      - proxy
+
+volumes:
+  wedding_data:
+
+networks:
+  proxy:
+    external: true
